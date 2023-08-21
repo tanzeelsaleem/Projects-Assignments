@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Search Results</title>
+
+    <style>
+        h1>a{
+            color: #F2A900;
+            text-decoration: none;
+        }
+        h2>a{
+            color: #00B4CC;
+            text-decoration: none;
+        }
+
+        ul{
+          list-style: none;
+        }
+        body{
+        background: #f2f2f2;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+
+    .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 5px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+    }
+    input{
+        font-size: 20px;
+    }
+    .searchTerm:focus{
+        color: #00B4CC;
+    }
+
+    .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    }
+
+    .wrap{
+    width: 60%;
+    position: absolute;
+    top: 17%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    }
+    .pagination{
+        overflow: scroll;
+    }
+    .result{
+        padding: 5px;
+        width: 100%;
+    }
+    #wordcloud {
+  position: relative;
+  height: 500px;
+  padding: 20px;
+}
+
+.word {
+  position: absolute;
+  top: calc(50% - 1em);
+  left: calc(50% - 2em);
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.word:hover {
+  transform: scale(1.2) rotate(0deg);
+  z-index: 2;
+}
+
+.word:first-letter {
+  text-transform: uppercase;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.page-link {
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  background-color: #00B4CC;
+}
+
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>
+            <a class="navbar-brand" href="/">IR System</a>
+        </h1>
+    <form id="search-form" action="/search" method="get">
+        <div class="wrap">
+            <div class="search">
+               <input type="text" id="search-bar" size="45" name="q" placeholder="Search Here">
+               <button type="submit" id="search-btn" class="searchButton">
+                 <img src="{{ url_for('static', filename='images/search.png') }}" height="20">
+              </button>
+            </div>
+         </div>
+    </form>
+  <div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+{% for result in results %}
+<div class="result">
+	<h2>{{ result.link|safe }}</h2>
+	<p>{{ result.abstract }}</p>
+</div>
+{% endfor %}
+{% if num_pages > 1 %}
+<nav>
+	<ul class="pagination">
+		{% if current_page > 1 %}
+		<li class="page-item"><a class="page-link" href="?q={{ query }}&page={{ current_page - 1 }}">Previous</a></li>
+		{% endif %}
+		{% for page_num in range(1, num_pages + 1) %}
+		{% if page_num == current_page %}
+		<li class="page-item active"><a class="page-link" href="?q={{ query }}&page={{ page_num }}">{{ page_num }}</a>
+		</li>
+		{% else %}
+		<li class="page-item"><a class="page-link" href="?q={{ query }}&page={{ page_num }}">{{ page_num }}</a></li>
+		{% endif %}
+		{% endfor %}
+
+		{% if current_page < num_pages %} <li class="page-item"><a class="page-link"
+				href="?q={{ query }}&page={{ current_page + 1 }}">Next</a></li>
+			{% endif %}
+	</ul>
+</nav>
+{% endif %}
+</div>
+<script>
+	var words = document.querySelectorAll('.word');
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i];
+    var randomX = Math.floor(Math.random() * 1200) - 200;
+    var randomY = Math.floor(Math.random() * 400) - 200;
+    word.style.top = 200 + randomY + 'px';
+    word.style.left = 200 + randomX + 'px';
+    word.style.fontSize = Math.floor(Math.random() * 4) + 1 + 'em';
+  }
+  const wordcloud = document.querySelector('#wordcloud');
+  wordcloud.addEventListener('click', (event) => {
+	if (event.target.classList.contains('word')) {
+	const word = event.target.textContent.trim();
+	const queryBox = document.querySelector('#search-bar');
+	queryBox.value += ` ${word}`;
+	}
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+ZjCPTaHmTVHmXzOusvlgsoDgqzumpn" crossorigin="anonymous"></script>
+</body>
+</html>

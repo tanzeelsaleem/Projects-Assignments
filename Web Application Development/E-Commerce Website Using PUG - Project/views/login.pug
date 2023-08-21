@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    style
+      include ./loginStyle.css
+  body(style='background-image: url("../static/images/image2.jpg");background-size: cover')
+    include header1.pug
+  .container
+  #login-box
+    .left
+      h1 Log In
+      br
+      form(role='form' method='POST' action='/loginAction')
+        if user
+          input(type='text', name='email', placeholder='Email', value=user.email)
+          input(type='password', name='password', placeholder='Password', value=user.password)
+          a(href='/resetPassword') Forgot Password?
+          input(type='submit', name='signup', value='Login')
+          br
+          br
+          if error 
+            p.error=error
+        else 
+          input(type='text', name='email', placeholder='Email')
+          input(type='password', name='password', placeholder='Password')
+          a(href='/resetPassword') Forgot Password?
+          input(type='submit', name='signup', value='Login')
+    .right
+      span.loginwith Log in with
+        br
+        | social network
+      button.social-signin.facebook
+        a.text-white(href='https://facebook.com') Log in with Facebook
+      button.social-signin.google
+        a.text-white(href='https://mail.google.com') Log in with Google+
+    .or OR

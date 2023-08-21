@@ -1,0 +1,11 @@
+Q_No.	Query
+1	2020 govern
+2	author 2020
+3	govern 2020
+4	servic feder
+5	author govern
+6	servic feder author
+7	2013 author feder
+8	feder servic govern
+9	power accus 2021
+10	feder servic 2013

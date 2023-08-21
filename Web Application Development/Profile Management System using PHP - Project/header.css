@@ -1,0 +1,58 @@
+.anch {
+  background-color: #212529;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 1.5px 1.5px 3px black;
+  width: 30px;
+  text-align: center;
+}
+a:hover {
+  color: teal;
+}
+.l_font {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.heading {
+  background-color: teal;
+  box-shadow: 2px 2px 5px black;
+  color: white;
+  width: 243px;
+  height: 50px;
+  font-size: 2.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+@media all and (min-width: 500px) {
+  .anch {
+    font-size: 0.8rem;
+  }
+}
+@media all and (min-width: 600px) {
+  .anch {
+    font-size: 0.9rem;
+  }
+}
+@media all and (min-width: 750px) {
+  .anch {
+    font-size: 1.05rem;
+  }
+}
+@media all and (min-width: 850px) {
+  .anch {
+    font-size: 1.15rem;
+  }
+}
+@media all and (min-width: 950px) {
+  .anch {
+    font-size: 1.25rem;
+  }
+}
+@media all and (min-width: 1150px) {
+  .anch {
+    font-size: 1.4rem;
+  }
+}

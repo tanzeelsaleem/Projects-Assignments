@@ -1,0 +1,275 @@
+h1 {
+  font-size: 1.2rem;
+  color: white;
+  background-color: teal;
+  border-radius: 7px;
+  width: 35%;
+  text-align: center;
+  box-shadow: 2px 2px 5px black;
+}
+.size {
+  font-size: 1.2rem;
+  color: teal;
+}
+.message1 {
+  color: red;
+  display: none;
+}
+.message2 {
+  color: red;
+  display: none;
+}
+.message3 {
+  color: red;
+  display: none;
+}
+.message4 {
+  color: red;
+  display: none;
+}
+.message5 {
+  color: red;
+  display: none;
+}
+.message6 {
+  color: red;
+  display: none;
+}
+.message7 {
+  color: red;
+  display: none;
+}
+.message8 {
+  color: red;
+  display: none;
+}
+.message9 {
+  color: red;
+  display: none;
+}
+.message10 {
+  color: red;
+  display: none;
+}
+.message11 {
+  color: red;
+  display: none;
+}
+.message12 {
+  color: red;
+  display: none;
+}
+.message13 {
+  color: red;
+  display: none;
+}
+.message14 {
+  color: red;
+  display: none;
+}
+.message15 {
+  color: red;
+  display: none;
+}
+.message16 {
+  color: red;
+  display: none;
+}
+.message17 {
+  color: red;
+  display: none;
+}
+.message18 {
+  color: red;
+  display: none;
+}
+.message19 {
+  color: red;
+  display: none;
+}
+.message20 {
+  color: red;
+  display: none;
+}
+.message21 {
+  color: red;
+  display: none;
+}
+body {
+  background-image: url(background.jpg);
+}
+.black {
+  color: black;
+}
+label {
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  color: teal;
+  text-align: left;
+}
+input {
+  margin: 9px;
+  width: 85%;
+  height: 20px;
+  box-sizing: content-box;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+input[type="submit"] {
+  width: 13%;
+  font-size: 0.9rem;
+  color: white;
+  background-color: teal;
+  border-radius: 5px;
+  float: right;
+  margin: 10px 20px;
+  height: 25px;
+}
+input::-webkit-input-placeholder {
+  font-size: 0.6rem;
+}
+legend {
+  text-align: center;
+  font-size: 1rem;
+  color: teal;
+}
+.red {
+  border: 2px solid red;
+  box-shadow: 1px 1px 4px red;
+}
+@media all and (min-width: 500px) {
+  h1 {
+    font-size: 1.4rem;
+    width: 155px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 0.9rem;
+  }
+  label {
+    font-size: 1.1rem;
+  }
+  input[type="submit"] {
+    font-size: 1.2rem;
+  }
+  legend {
+    font-size: 1.2rem;
+  }
+}
+@media all and (min-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+    width: 181px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1rem;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+  legend {
+    font-size: 1.3rem;
+  }
+  input[type="submit"] {
+    width: 12%;
+    font-size: 1.2rem;
+  }
+}
+@media all and (min-width: 750px) {
+  h1 {
+    font-size: 1.9rem;
+    width: 214px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+  }
+  label {
+    font-size: 1.3rem;
+  }
+  legend {
+    font-size: 1.4rem;
+  }
+  input[type="submit"] {
+    width: 12%;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+  input {
+    width: 90%;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+}
+@media all and (min-width: 850px) {
+  h1 {
+    font-size: 2.1rem;
+    width: 240px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1.3rem;
+  }
+  label {
+    font-size: 1.4rem;
+  }
+  legend {
+    font-size: 1.4rem;
+  }
+  input[type="submit"] {
+    width: 14%;
+    font-size: 1.6rem;
+  }
+  input {
+    width: 95%;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
+@media all and (min-width: 950px) {
+  h1 {
+    font-size: 2.2rem;
+    width: 255px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1.4rem;
+  }
+  label {
+    font-size: 1.5rem;
+  }
+  legend {
+    font-size: 1.5rem;
+  }
+  input[type="submit"] {
+    width: 12%;
+    height: 40px;
+    font-size: 1.7rem;
+  }
+  input {
+    width: 95%;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 1150px) {
+  h1 {
+    font-size: 2.5rem;
+    width: 285px;
+  }
+  input::-webkit-input-placeholder {
+    font-size: 1.4rem;
+  }
+  label {
+    font-size: 1.5rem;
+  }
+  legend {
+    font-size: 1.8rem;
+  }
+  input[type="submit"] {
+    width: 8%;
+    height: 50px;
+    font-size: 1.7rem;
+  }
+  input {
+    width: 99%;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+}

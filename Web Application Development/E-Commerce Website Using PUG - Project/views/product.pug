@@ -1,0 +1,83 @@
+html
+  head
+    title #{obj.name}
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css')
+    script(src='./product.js')
+    style
+      include ./product.css
+  body.bg_body.mt-1
+    if sess
+        include header2.pug
+    else 
+        include header1.pug
+    div.container-fluid.jumbotron.my-custom-white.mb-1
+      div.row.pl-5.pr-5.mt-0
+        div.col-6
+          img#product-image(src=obj.image)
+        div.col-6.pr-5.mt-0
+          h3#name #{obj.name}
+          div.clip-star
+          div.clip-star
+          div.clip-star
+          div.clip-star
+          div.clip-star.mr-0
+          p.rating-color.p_display.mr-4
+            strong &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{obj.ratings} Ratings
+          p.rating-color
+            strong &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              span.text-secondary Brand:
+              | &nbsp;
+              | Anonymous
+          hr
+          h2.price-color Rs. #{obj.price}
+          p Quantity&nbsp;
+            button.my-custom-white(onclick='incrementProductCount()') +
+            | &nbsp;
+            span#productCount 1
+            | &nbsp;
+            button.my-custom-white(onclick='decrementProductCount()') -
+          div
+            button.custom-btn.btn-info#btn(onclick='buynow()') Buy Now&nbsp;&nbsp;
+            span &emsp;
+            button.custom-btn.cart-color#cartadd(onclick='addtocart()') Add to Cart&nbsp;&nbsp;
+    div
+      img.thumbnail(src=obj.image, width='70' height='50')
+      img.thumbnail(src=obj.image, alt='Alternate image 2')
+      script.
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const mainImage = document.getElementById("product-image");
+        thumbnails.forEach(thumbnail => {
+          thumbnail.addEventListener("click", function () {
+            tmp = mainImage.src;
+            mainImage.src = this.src;
+            this.src = tmp;
+          });
+        });
+          function incrementProductCount() {
+            const productCountSpan = document.getElementById('productCount');
+            const currentCount = parseInt(productCountSpan.innerHTML);
+            if (currentCount < 1) {
+              return;
+            }
+            productCountSpan.innerHTML = currentCount + 1;
+          }
+          function decrementProductCount() {
+            const productCountSpan = document.getElementById('productCount');
+            const currentCount = parseInt(productCountSpan.innerHTML);
+            if (currentCount <= 1) {
+              return;
+            }
+            productCountSpan.innerHTML = currentCount - 1;
+          }     
+          function buynow() {
+            const name=document.getElementById('name').innerHTML
+            console.log(name)
+            let order="order"
+            window.location.href='history?name='+name
+            }
+
+          function addtocart() {
+            const name=document.getElementById('name').innerHTML
+            console.log(name)
+            window.location.href='history_cart?name='+name
+          }

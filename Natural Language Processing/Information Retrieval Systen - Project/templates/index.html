@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Legal Document Search</title>
+</head>
+
+<style>
+    h1{
+        color: #F2A900
+    }
+    body{
+        background: #f2f2f2;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    }
+
+    .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    }
+    input{
+        font-size: 20px;
+    }
+    .searchTerm:focus{
+    color: #00B4CC;
+    }
+
+    .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    }
+    
+    .wrap{
+    width: 60%;
+    position: absolute;
+    top: 17%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <h1>IR System</h1>
+    <br>
+    <form id="search-form" action="/search" method="get">
+        <div class="wrap">
+            <div class="search">
+               <input type="text" id="search-bar" size="45" name="q" placeholder="Search Here">
+               <button type="submit" id="search-btn" class="searchButton">
+                 <img src="{{ url_for('static', filename='images/search.png') }}"  height="20">
+              </button>
+            </div>
+         </div>
+    </form>
+</body>
+</html>

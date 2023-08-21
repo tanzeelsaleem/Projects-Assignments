@@ -1,0 +1,4 @@
+#Thu May 28 16:14:42 IST 2020
+base.0=D\:\\android mini\\Medicine-Time-\\app\\build\\intermediates\\dex\\mockDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

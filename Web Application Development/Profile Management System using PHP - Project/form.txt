@@ -1,0 +1,234 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let fm = document.querySelector("form");
+  fm.addEventListener("submit", check_fname);
+  fm.addEventListener("submit", check_lname);
+  fm.addEventListener("submit", check_age);
+  fm.addEventListener("submit", check_pn);
+  fm.addEventListener("submit", check_email);
+  fm.addEventListener("submit", check_dep);
+  fm.addEventListener("submit", check_uni);
+  fm.addEventListener("submit", check_mat1);
+  fm.addEventListener("submit", check_mat2);
+  fm.addEventListener("submit", check_mat3);
+  fm.addEventListener("submit", check_inter1);
+  fm.addEventListener("submit", check_inter2);
+  fm.addEventListener("submit", check_inter3);
+  fm.addEventListener("submit", check_skill_year1);
+  fm.addEventListener("submit", check_skill_year2);
+  fm.addEventListener("submit", check_skill_year3);
+  fm.addEventListener("submit", check_refname);
+  fm.addEventListener("submit", check_refpn);
+});
+function check_fname(e) {
+  let name_node = document.querySelector("#fname");
+  let name = name_node.value;
+  let name_pattern = /^[A-Za-z ]*$/;
+  let len = name.length;
+  if (name_pattern.test(name) == false || len < 5 || len > 12) {
+    name_node.className = "red";
+    document.getElementsByClassName("message1")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_lname(e) {
+  let name_node = document.querySelector("#lname");
+  let name = name_node.value;
+  let name_pattern = /^[A-Za-z ]*$/;
+  let len = name.length;
+  if (name_pattern.test(name) == false(len < 5 || len > 12)) {
+    name_node.className = "red";
+    document.getElementsByClassName("message2")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_age(e) {
+  let age_node = document.querySelector("#age");
+  let age = age_node.value;
+  let age_pattern = /^[0-9]{2}$/;
+  if (age < 18 || age > 50) {
+    age_node.className = "red";
+    document.getElementsByClassName("message3")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_pn(e) {
+  let pn_node = document.querySelector("#mob_no");
+  let pn = pn_node.value;
+  let pn_pattern = /^(03)\d{2}\-?\d{7}$/;
+  if (pn_pattern.test(pn) == false) {
+    pn_node.className = "red";
+    document.getElementsByClassName("message4")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_email(e) {
+  let email_node = document.querySelector("#email");
+  let email = email_node.value;
+  let email_pattern =
+    /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+)+\.(com)$/;
+  if (email_pattern.test(email) == false) {
+    email_node.className = "red";
+    document.getElementsByClassName("message5")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_dep(e) {
+  let name_node = document.querySelector("#depart");
+  let name = name_node.value;
+  let name_pattern = /^[A-Za-z ]*$/;
+  if (name_pattern.test(name) == false) {
+    name_node.className = "red";
+    document.getElementsByClassName("message6")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_uni(e) {
+  let name_node = document.querySelector("#uni");
+  let name = name_node.value;
+  let name_pattern = /^[A-Za-z ]*$/;
+  if (name_pattern.test(name) == false) {
+    name_node.className = "red";
+    document.getElementsByClassName("message7")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_mat1(e) {
+  let grade_node = document.querySelector("#mats1_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message8")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_mat2(e) {
+  let grade_node = document.querySelector("#mats2_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message9")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_mat3(e) {
+  let grade_node = document.querySelector("#mats3_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message10")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_inter1(e) {
+  let grade_node = document.querySelector("#inters1_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message11")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_inter2(e) {
+  let grade_node = document.querySelector("#inters2_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message12")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_inter3(e) {
+  let grade_node = document.querySelector("#inters3_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message13")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_bach1(e) {
+  let grade_node = document.querySelector("#bachs1_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?[continue]?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message14")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_bach2(e) {
+  let grade_node = document.querySelector("#bachs2_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?[continue]?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message15")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_bach3(e) {
+  let grade_node = document.querySelector("#bachs3_g");
+  let grade = grade_node.value;
+  let grade_pattern = /^[ABCDF]\+?\-?[continue]?$/;
+  if (grade_pattern.test(grade) == false) {
+    grade_node.className = "red";
+    document.getElementsByClassName("message16")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_skill_year1(e) {
+  let skill_node = document.querySelector("#skill1");
+  let skill = skill_node.value;
+  let skill_pattern = /^[0-9]$/;
+  if (skill < 0 || skill > 50) {
+    skill_node.className = "red";
+    document.getElementsByClassName("message17")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_skill_year2(e) {
+  let skill_node = document.querySelector("#skill2");
+  let skill = skill_node.value;
+  let skill_pattern = /^[0-9]$/;
+  if (skill < 0 || skill > 50) {
+    skill_node.className = "red";
+    document.getElementsByClassName("message18")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_skill_year3(e) {
+  let skill_node = document.querySelector("#skill3");
+  let skill = skill_node.value;
+  let skill_pattern = /^[0-9]{2}$/;
+  if (skill < 0 || skill > 50) {
+    skill_node.className = "red";
+    document.getElementsByClassName("message19")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_refname(e) {
+  let name_node = document.querySelector("#refname");
+  let name = name_node.value;
+  let name_pattern = /^[A-Za-z ]*$/;
+  if (name_pattern.test(name) == false) {
+    name_node.className = "red";
+    document.getElementsByClassName("message20")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_refpn(e) {
+  let pn_node = document.querySelector("#refmob_no");
+  let pn = pn_node.value;
+  let pn_pattern = /^(03)\d{2}\-?\d{7}$/;
+  if (pn_pattern.test(pn) == false) {
+    pn_node.className = "red";
+    document.getElementsByClassName("message21")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}

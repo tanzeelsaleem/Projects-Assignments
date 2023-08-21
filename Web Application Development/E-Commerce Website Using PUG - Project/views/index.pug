@@ -1,0 +1,201 @@
+html(lang="en")
+    head
+        title E-Mart
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css")
+    body.pr-4.pl-4.pt-2.bg-light
+        // 
+        if sess
+            include header2.pug
+        else 
+            include header1.pug
+        div#mySlideshow.carousel.slide(data-ride="carousel")
+            div.row
+                div.col-3
+                    div.bg-light.p-4.text-center
+                        h2.text-center#categories Categories
+                        ol.list-group.list-group-numbered
+                            li.list-group-item 
+                                a(href="/products?q=beverages") Beverages
+                            li.list-group-item
+                                a(href="/products?q=fragrances") Frangrances
+                            li.list-group-item 
+                                a(href="/products?q=beverages") Mobiles
+                            li.list-group-item
+                                a(href="/products?q=fragrances") Fashion
+                            li.list-group-item 
+                                a(href="/products?q=beverages") Accessories
+                            li.list-group-item
+                                a(href="/products?q=fragrances") Tablets
+                            li.list-group-item 
+                                a(href="/products?q=beverages") Laptops
+                            li.list-group-item
+                                a(href="/products?q=fragrances") Cosmetics
+                div.col-9
+                    // Indicators
+                    ul.carousel-indicators
+                        li#slide-1.active
+                        li#slide-2
+                        li#slide-3
+                        li#slide-4
+                        li#slide-5
+                        li#slide-6
+                        li#slide-7
+                        li#slide-8
+                        li#slide-9
+                        li#slide-10
+                    // Slideshow
+                    div.carousel-inner
+                        div.carousel-item.active
+                            img.d-block.w-100(src="//icms-image.slatic.net/images/ims-web/8f0e04bf-2d40-4d56-8d27-3a3729c38e59.jpg" alt="Slide 1" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="//icms-image.slatic.net/images/ims-web/a8d3b51b-5741-4dad-934a-7cdc02cfede6.jpg" alt="Slide 2" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/1.jpg" alt="Slide 3" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/2.jpg" alt="Slide 2" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/1.jpg" alt="Slide 3" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/2.jpg" alt="Slide 2" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/1.jpg" alt="Slide 3" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/2.jpg" alt="Slide 2" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/1.jpg" alt="Slide 3" height="500")
+                        div.carousel-item
+                            img.d-block.w-100(src="../static/images/2.jpg" alt="Slide 2" height="500")
+                    // Left and right controls
+                    a.carousel-control-prev(href="#mySlideshow" role="button" data-slide="prev")
+                        span.carousel-control-prev-icon(aria-hidden="true")
+                        //- span.sr-only Previous
+                    a.carousel-control-next(href="#mySlideshow" role="button" data-slide="next")
+                        span.carousel-control-next-icon(aria-hidden="true")
+                        //- span.sr-only Next
+        hr
+        h1.text-center CATEGORIES
+        .d-flex.mt-5.row(style="")
+            .col-1.bg-light.text-center.d-flex.justify-content-center.flex-column
+                a.display-4(href='#categories' style='text-decoration:none') ^
+            .col-11.bg-light.pb-2.pt-2
+                .d-flex.justify-content-between.flex-wrap
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/27fa0d21a608450c45cd6713b9c7490c.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Beverages
+                            a.btn.btn-primary(href='products?q=beverages') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/4ceb4911e230078dfca4320ff16c42bb.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Fragrances
+                            a.btn.btn-primary(href='products?q=fragrances') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/27fa0d21a608450c45cd6713b9c7490c.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Mobiles
+                            a.btn.btn-primary(href='products?q=beverages') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/4ceb4911e230078dfca4320ff16c42bb.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Fashion
+                            a.btn.btn-primary(href='products?q=fragrances') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/27fa0d21a608450c45cd6713b9c7490c.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Accessories
+                            a.btn.btn-primary(href='products?q=beverages') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/4ceb4911e230078dfca4320ff16c42bb.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Tablets
+                            a.btn.btn-primary(href='products?q=fragrances') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/27fa0d21a608450c45cd6713b9c7490c.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Cosmetics
+                            a.btn.btn-primary(href='products?q=beverages') View Products
+                    .card.mb-2.mr-2(style='width: 18rem;')
+                        img.card-img-top(src='https://static-01.daraz.pk/p/4ceb4911e230078dfca4320ff16c42bb.jpg' alt='...')
+                        .card-body
+                            h5.card-title.text-truncate Laptops
+                            a.btn.btn-primary(href='products?q=fragrances') View Products
+
+
+        hr
+        h1.text-center PRODUCTS
+        .d-flex.mt-5.row(style="")
+            .col-1.bg-light.text-center.d-flex.justify-content-center.flex-column
+                a.display-4(href='#categories' style='text-decoration:none') ^
+            .col-11.bg-light.pb-2.pt-2
+                .d-flex.justify-content-between.flex-wrap
+                    each product, i in products 
+                        if i<4
+                            .card.mb-2.mr-2(style='width: 18rem;')
+                                img.card-img-top(src=product.image style="width:100%")
+                                .card-body
+                                    h5.card-title.text-truncate #{product.name}
+                                    h3.card-text.text-info Rs. #{product.price}
+                                    h4(style='color:yellow; -webkit-text-stroke: 0px #00f; text-shadow:0px 0px 2px #001;') &#9733;&#9733;&#9733;&#9734;&#9734;
+                                    a.btn.btn-primary(href='/buy?name='+product.name) Buy Product
+
+
+
+        //javascript
+        script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js')
+        script.
+            $(document).ready(function () {
+
+                // Carousel activation
+                $("#mySlideshow").carousel();
+
+                // Enabling carousel controls
+                $(".carousel-control-prev").click(function () {
+                $("#mySlideshow").carousel('prev');
+                });
+                $(".carousel-control-next").click(function () {
+                $("#mySlideshow").carousel('next');
+                });
+
+                // Enabling carousel indicators
+                $("#slide-1").click(function () {
+                $("#mySlideshow").carousel(0);
+                });
+                $("#slide-2").click(function () {
+                $("#mySlideshow").carousel(1);
+                });
+                $("#slide-3").click(function () {
+                $("#mySlideshow").carousel(2);
+                });
+                $("#slide-4").click(function () {
+                $("#mySlideshow").carousel(3);
+                });
+                $("#slide-5").click(function () {
+                $("#mySlideshow").carousel(4);
+                });
+                $("#slide-6").click(function () {
+                $("#mySlideshow").carousel(5);
+                });
+                $("#slide-7").click(function () {
+                $("#mySlideshow").carousel(6);
+                });
+                $("#slide-8").click(function () {
+                $("#mySlideshow").carousel(7);
+                });
+                $("#slide-9").click(function () {
+                $("#mySlideshow").carousel(8);
+                });
+                $("#slide-10").click(function () {
+                $("#mySlideshow").carousel(9);
+                });
+            });
+
+
+
+
+
+//- body.p-5
+//-     include header1.pug
+//-     include header2.pug
+//-     include header1.pug
+//-     include cart.pug

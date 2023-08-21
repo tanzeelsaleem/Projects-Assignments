@@ -1,0 +1,43 @@
+head
+    title E-Mart
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css")
+body.p-3
+    if sess
+        include header2.pug
+    else 
+        include header1.pug
+    h1.text-center(style="font-variant: small-caps;") My Cart
+    hr
+    div.row
+        div.col-6.pr-2.border-primary.border-right
+            h3.text-center(style="font-variant: small-caps;") Items In Cart
+            table.w-100
+                tr
+                    th Email
+                    th Product Name
+                    th Date
+                    th Link
+                each product in products
+                    if product.type == "cart" 
+                        tr
+                            td #{product.user}
+                            td #{product.name}
+                            td #{product.date}
+                            td 
+                                a(href=product.link) View
+        div.col-6.pr-2
+            h3.text-center(style="font-variant: small-caps;") Items Purchased
+            table.w-100
+                tr
+                    th Email
+                    th Product Name
+                    th Date
+                    th Link
+                each product in products
+                    if product.type == "order" 
+                        tr
+                            td #{product.user}
+                            td #{product.name}
+                            td #{product.date}
+                            td 
+                                a(href=product.link) View

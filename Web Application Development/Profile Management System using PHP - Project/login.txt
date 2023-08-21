@@ -1,0 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let fm = document.querySelector("form");
+  fm.addEventListener("change", check_username);
+  fm.addEventListener("submit", check_password);
+});
+function check_username(e) {
+  let node = document.querySelector("#username");
+  let name = node.value;
+  let name_pattern = /^[A-Za-z0-9_-]*$/;
+  let len = name.length;
+  if (name_pattern.test(name) == false || len <= 5 || len >= 12) {
+    node.className = "red";
+    document.getElementsByClassName("message1")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_password(e) {
+  let node = document.querySelector("#password");
+  let pass = node.value;
+  let len = pass.length;
+  if (len > 8 || len < 8) {
+    node.className = "red";
+    document.getElementsByClassName("message2")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}

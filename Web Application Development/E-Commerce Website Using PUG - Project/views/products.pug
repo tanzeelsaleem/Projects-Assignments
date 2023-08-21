@@ -1,0 +1,21 @@
+html 
+    head
+        title E-Mart
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css")
+    body
+        if sess
+            include header2.pug
+        else 
+            include header1.pug
+        h1.text-center.text-uppercase #{products[0].category}
+        .d-flex.mt-5.row(style="")
+            .col-12.bg-light.pb-2.pt-2
+                .d-flex.justify-content-center.flex-wrap
+                    each product in products
+                        .card.mb-2.mr-3.ml-3(style='width: 18rem;')
+                            img.card-img-top(src=product.image alt='...')
+                            .card-body
+                                h5.card-title.text-truncate #{product.name}
+                                h3.card-text.text-info Rs. #{product.price}
+                                h4(style='color:yellow; -webkit-text-stroke: 0px #00f; text-shadow:0px 0px 2px #001;') &#9733;&#9733;&#9733;&#9734;&#9734;
+                                a.btn.btn-primary(href='/buy?name='+product.name) Buy Product

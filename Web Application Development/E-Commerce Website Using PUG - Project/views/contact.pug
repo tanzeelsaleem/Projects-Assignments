@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    style
+      include ./contact.css
+  body(style='background-image: url("../static/images/image2.jpg");background-size: cover')
+  if sess
+      include header2.pug
+  else 
+      include header1.pug
+  #login-box
+    .left
+      h1 Send us a Message
+      form(role='form' method='GET' action='/contact')
+        input(type='text', name='name', placeholder='Name')
+        input(type='email', name='email', placeholder='Email')
+        input(type='text', name='subject', placeholder='Subject')
+        input(type='text', name='message', placeholder='Message')
+        input(type='submit', name='signup', value='Send Message')
+    .right
+      h1 Contact Us!
+      p We're open for any suggestion or just to have a chat.
+      p 
+        b Address: 
+        span 198 West 21th Street, Suite 721 New York NY 10016
+      p 
+        b Phone: 
+        span +1235 2355 98
+      p 
+        b Email: 
+        span info@yoursite.com
+      p 
+        b Website: 
+        span yoursite.com

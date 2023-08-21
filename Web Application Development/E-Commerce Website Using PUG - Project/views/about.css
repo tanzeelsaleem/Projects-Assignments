@@ -1,0 +1,11 @@
+h1{
+    color: #75468c;
+}
+div{
+    position: relative;
+    margin: 7% auto;
+    margin-right: 65%;
+    width: 400px;
+    height: 460px;
+    border-radius: 2px;
+  }

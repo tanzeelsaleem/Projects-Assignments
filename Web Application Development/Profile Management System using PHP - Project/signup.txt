@@ -1,0 +1,48 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let fm = document.querySelector("form");
+  fm.addEventListener("change", check_username);
+  fm.addEventListener("submit", check_password);
+  fm.addEventListener("submit", check_rpassword);
+  fm.addEventListener("submit", check_passmatch);
+});
+function check_username(e) {
+  let node = document.querySelector("#username");
+  let name = node.value;
+  let name_pattern = /^[A-Za-z0-9_-]*$/;
+  let len = name.length;
+  if (name_pattern.test(name) == false || len <= 5 || len >= 12) {
+    node.className = "red";
+    document.getElementsByClassName("message1")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_password(e) {
+  let node = document.querySelector("#password");
+  let pass = node.value;
+  let len = pass.length;
+  if (len > 8 || len < 8) {
+    node.className = "red";
+    document.getElementsByClassName("message2")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_rpassword(e) {
+  let node = document.querySelector("#rpassword");
+  let pass = node.value;
+  let len = pass.length;
+  if (len > 8 || len < 8) {
+    node.className = "red";
+    document.getElementsByClassName("message3")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}
+function check_passmatch(e) {
+  let node1 = document.querySelector("#password");
+  let pass1 = node1.value;
+  let node2 = document.querySelector("#rpassword");
+  let pass2 = node2.value;
+  if (pass1 != pass2) {
+    document.getElementsByClassName("message4")[0].style.display = "inline";
+    e.preventDefault();
+  }
+}

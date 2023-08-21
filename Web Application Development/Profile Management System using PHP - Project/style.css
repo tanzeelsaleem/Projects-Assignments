@@ -1,0 +1,45 @@
+.bg-teal {
+  background-color: teal;
+}
+.text_color {
+  color: teal;
+}
+.h1 {
+  font-size: 60px;
+}
+body {
+  background-image: url(background.jpg);
+}
+h2 {
+  font-size: 33px;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+}
+p {
+  font-size: 25px;
+}
+#li_font {
+  font-size: 25px;
+}
+td,
+th {
+  padding: 0px;
+}
+@media all and (max-width: 780px) {
+  .h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 29px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  p {
+    font-size: 23px;
+  }
+  #li_font {
+    font-size: 23px;
+  }
+}

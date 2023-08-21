@@ -1,0 +1,48 @@
+.message1 {
+  color: red;
+  display: none;
+}
+.message2 {
+  color: red;
+  display: none;
+}
+.red {
+  border: 2px solid red;
+  box-shadow: 1px 1px 4px red;
+}
+h1 {
+  color: teal;
+  padding: 0px 0px 22px 63px;
+}
+body {
+  background-image: url(background.jpg);
+}
+label {
+  text-align: center;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 5px black;
+}
+.login {
+  width: 382px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 132px 0px 0px 0px;
+}
+input[type="submit"] {
+  color: white;
+  background-color: teal;
+  float: right;
+  width: 30%;
+  height: 36px;
+  font-size: 1rem;
+  box-shadow: 1px 1px 5px black;
+  margin: 30px 75px 0px 40px;
+}
